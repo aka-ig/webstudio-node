@@ -1,4 +1,8 @@
-function create(req, res) { }
+const projectModel = require('../models/project.model');
+
+function create(req, res) {
+    projectModel.create().then(data => res.send(data), err => res.status(500).send((err)));
+}
 
 function read(req, res) { }
 
